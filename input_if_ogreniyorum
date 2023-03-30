@@ -1,0 +1,59 @@
+"""
+Yönergeler
+Kullanıcının girdiği veriden sonra en az 4 farklı duruma göre değerlendirip sonucu ekrana yazdıran programı yazınız.
+Aşağıdakilerden birisini seçebilir veya siz kendi bölümünüze(alanınıza) göre en az 4 farklı durum değerlendirmesi yapan bir program yazınız.
+Ör:
+Hesap makinası
+Öğrenci notlarının harf not karşılıkları
+Alan, yarıçap, vb. hesaplama (kare, diktörgen vb.)
+Hava sıcaklığına göre ortamın değerlendirilmesi
+
+Hatırlatma: Lütfen sadece .py uzantılı tek bir dosyayı gönderiniz. Zip veya Rar yapmayınız.
+"""
+#Öğrenci notlarının harf not karşılıkları
+
+"""
+4.0 -- AA -- 90-100
+3.5 -- BA -- 82-89
+3.0 -- BB -- 73-81
+2.5 -- CB -- 65-72
+2.0 -- CC -- 57-64
+1.5 -- DC -- 48-56
+1.0 -- DD -- 40-47
+0.0 -- FF -- 0-39
+
+"""
+
+print("Harf notu hesaplama uygulamasına hoşgeldiniz...")
+araSinav=int(input("Ara sınav notunuzu giriniz: "))
+finalSinavi=float(input("Final sınav notunuzu giriniz:"))
+dersNotu=round((araSinav*0.4+finalSinavi*0.6),2)
+print("Ders notunuz= ", dersNotu)
+if dersNotu<=39:
+    result="FF"
+elif dersNotu<=47:
+    result="DD"
+elif dersNotu<=56:
+    result="DC"
+elif dersNotu<=64:
+    result="CC"
+elif dersNotu<=72:
+    result="CB"     
+elif dersNotu<=81:
+    result="BB"
+elif dersNotu<=89:
+    result="BA"
+elif dersNotu<=100:
+    result="AA"
+else:
+    print("Geçersiz işlem. Lütfen girdiğiniz değerleri tekrar gözden geçirin.")   
+
+if result=="FF":
+    sonuc="Maalesef dersten kaldınız."    
+elif result=="DC" or result=="DD":
+    sonuc="Dersi şartlı geçtiniz."
+else:
+    sonuc="Tebrikler... Dersi geçtiniz."    
+
+
+print("Harf notunuz: ", result, "\nDers durumunuz: ", sonuc)
